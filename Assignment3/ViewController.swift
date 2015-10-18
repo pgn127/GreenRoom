@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var mainMapView: MKMapView!
+    
     var forcastService = SurfForcastService()
     
     override func viewDidLoad() {
