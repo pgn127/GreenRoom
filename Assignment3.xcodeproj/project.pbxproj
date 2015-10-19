@@ -14,6 +14,8 @@
 		3E0E7A581BCDEE8E00A4E09C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0E7A571BCDEE8E00A4E09C /* Images.xcassets */; };
 		3E0E7A5B1BCDEE8E00A4E09C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E0E7A591BCDEE8E00A4E09C /* LaunchScreen.xib */; };
 		3E0E7A671BCDEE8E00A4E09C /* Assignment3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E7A661BCDEE8E00A4E09C /* Assignment3Tests.swift */; };
+		3E341E711BD4E43600F83A65 /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E341E701BD4E43600F83A65 /* StateModel.swift */; };
+		3E341E731BD4E5C200F83A65 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E341E721BD4E5C200F83A65 /* LocationModel.swift */; };
 		3E7DB1231BD38D85001788DF /* SurfForcastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DB1221BD38D85001788DF /* SurfForcastService.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		3E0E7A601BCDEE8E00A4E09C /* Assignment3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Assignment3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0E7A651BCDEE8E00A4E09C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E0E7A661BCDEE8E00A4E09C /* Assignment3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment3Tests.swift; sourceTree = "<group>"; };
+		3E341E701BD4E43600F83A65 /* StateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
+		3E341E721BD4E5C200F83A65 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		3E7DB1221BD38D85001788DF /* SurfForcastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurfForcastService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +93,8 @@
 				3E0E7A4F1BCDEE8E00A4E09C /* Assignment3.xcdatamodeld */,
 				3E0E7A4B1BCDEE8E00A4E09C /* Supporting Files */,
 				3E7DB1221BD38D85001788DF /* SurfForcastService.swift */,
+				3E341E701BD4E43600F83A65 /* StateModel.swift */,
+				3E341E721BD4E5C200F83A65 /* LocationModel.swift */,
 			);
 			path = Assignment3;
 			sourceTree = "<group>";
@@ -222,6 +228,8 @@
 				3E0E7A511BCDEE8E00A4E09C /* Assignment3.xcdatamodeld in Sources */,
 				3E7DB1231BD38D85001788DF /* SurfForcastService.swift in Sources */,
 				3E0E7A4E1BCDEE8E00A4E09C /* AppDelegate.swift in Sources */,
+				3E341E731BD4E5C200F83A65 /* LocationModel.swift in Sources */,
+				3E341E711BD4E43600F83A65 /* StateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

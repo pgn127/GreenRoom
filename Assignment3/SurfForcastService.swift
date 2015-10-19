@@ -16,14 +16,23 @@ class SurfForcastService {
     let apiStateId:String = "api/v1/states/"
     let apiLocationId:String = "api/v1/locations/"
     
-    func getStatesAll() {
+    func getStatesAll(callback: ([StateModel]) -> ()) {
         let apiEndpoint:String = self.domain + self.apiStates +  ".json" + self.apiKey
         let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: apiEndpoint)!, completionHandler: { (data, response, error) -> Void in
             var error: NSError?
             var json: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &error)!
-
-            println(json)
+            var stateList:[StateModel] = []
             
+            if let jsonParse = json as? [AnyObject] {
+                for item in jsonParse {
+                    var id:Int = item["id"] as! Int
+                    var name:String = item["name"] as! String
+                    var model = StateModel(id: id, name: name)
+                    stateList.append(model)
+                }
+            }
+            
+            callback(stateList)
         })
         task.resume()
     }
@@ -52,5 +61,5 @@ class SurfForcastService {
         task.resume()
     }
     
-    
 }
+
