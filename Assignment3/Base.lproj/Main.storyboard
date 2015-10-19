@@ -75,7 +75,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAy-ru-7fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645" y="575"/>
+            <point key="canvasLocation" x="1645" y="508"/>
         </scene>
         <!--Search-->
         <scene sceneID="knS-jf-1fq">
@@ -102,7 +102,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iv7-5z-wVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645" y="1231"/>
+            <point key="canvasLocation" x="1645" y="1148"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qSs-Zl-NAc">
+            <objects>
+                <viewController id="anE-FS-GGr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s81-ea-Kxz"/>
+                        <viewControllerLayoutGuide type="bottom" id="eHK-hQ-BkB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ca4-rH-LEE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yIB-q5-yDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2471" y="817"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r5v-kq-D9h">
