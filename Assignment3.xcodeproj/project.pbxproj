@@ -16,6 +16,7 @@
 		3E0E7A671BCDEE8E00A4E09C /* Assignment3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E7A661BCDEE8E00A4E09C /* Assignment3Tests.swift */; };
 		3E341E711BD4E43600F83A65 /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E341E701BD4E43600F83A65 /* StateModel.swift */; };
 		3E341E731BD4E5C200F83A65 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E341E721BD4E5C200F83A65 /* LocationModel.swift */; };
+		3E341E751BD5158900F83A65 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E341E741BD5158900F83A65 /* SearchTableViewController.swift */; };
 		3E7DB1231BD38D85001788DF /* SurfForcastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DB1221BD38D85001788DF /* SurfForcastService.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		3E0E7A661BCDEE8E00A4E09C /* Assignment3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment3Tests.swift; sourceTree = "<group>"; };
 		3E341E701BD4E43600F83A65 /* StateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
 		3E341E721BD4E5C200F83A65 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		3E341E741BD5158900F83A65 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		3E7DB1221BD38D85001788DF /* SurfForcastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurfForcastService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				3E7DB1221BD38D85001788DF /* SurfForcastService.swift */,
 				3E341E701BD4E43600F83A65 /* StateModel.swift */,
 				3E341E721BD4E5C200F83A65 /* LocationModel.swift */,
+				3E341E741BD5158900F83A65 /* SearchTableViewController.swift */,
 			);
 			path = Assignment3;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				3E0E7A531BCDEE8E00A4E09C /* ViewController.swift in Sources */,
 				3E0E7A511BCDEE8E00A4E09C /* Assignment3.xcdatamodeld in Sources */,
 				3E7DB1231BD38D85001788DF /* SurfForcastService.swift in Sources */,
+				3E341E751BD5158900F83A65 /* SearchTableViewController.swift in Sources */,
 				3E0E7A4E1BCDEE8E00A4E09C /* AppDelegate.swift in Sources */,
 				3E341E731BD4E5C200F83A65 /* LocationModel.swift in Sources */,
 				3E341E711BD4E43600F83A65 /* StateModel.swift in Sources */,

@@ -13,8 +13,8 @@ class LocationModel : Printable, DebugPrintable {
     var id: Int
     var name: String
     var stateId: Int
-    var lat: String
-    var long: String
+    var lat: Double
+    var long: Double
 
     var description: String {
         return "id: " + String(stringInterpolationSegment: self.id) + "\n" +
@@ -32,7 +32,7 @@ class LocationModel : Printable, DebugPrintable {
             "long: " + String(stringInterpolationSegment: self.long)
     }
     
-    init (id: Int, name: String, stateId: Int, lat:String, long: String) {
+    init (id: Int, name: String, stateId: Int, lat:Double, long: Double) {
         self.id = id
         self.name = name
         self.stateId = stateId
@@ -41,7 +41,7 @@ class LocationModel : Printable, DebugPrintable {
     }
     
     // Returns the geo-location for this location
-    func getLocation() -> (lat: String, long: String) {
+    func getLocation() -> (lat: Double, long: Double) {
         return (self.lat, self.long)
     }
 }

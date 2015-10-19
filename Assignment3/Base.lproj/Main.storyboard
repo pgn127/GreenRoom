@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--Green Room-->
+        <!--View Controller-->
         <scene sceneID="Waf-Rk-JMh">
             <objects>
                 <viewController id="H39-3n-8UR" customClass="ViewController" customModule="Assignment3" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,16 +28,81 @@
                             <constraint firstItem="zo8-nG-LAL" firstAttribute="leading" secondItem="1gm-0J-lFi" secondAttribute="leading" id="XLl-Xp-se2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Green Room" id="TJ6-sd-q1G">
-                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="Szu-dT-xGI"/>
+                    <navigationItem key="navigationItem" id="TJ6-sd-q1G">
+                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="Szu-dT-xGI">
+                            <connections>
+                                <segue destination="hbJ-HB-bxb" kind="show" id="of9-Js-1vE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="PI3-c6-Isn">
+                            <connections>
+                                <segue destination="ExZ-IW-XeA" kind="show" identifier="segueSearch" id="Log-M0-Flw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bookmarkNavButton" destination="Szu-dT-xGI" id="Hwl-mE-hJq"/>
                         <outlet property="mainMapView" destination="zo8-nG-LAL" id="V89-sN-a0f"/>
+                        <outlet property="searchNavButton" destination="PI3-c6-Isn" id="FvL-8c-18p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvs-Wy-Q83" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="873" y="809"/>
+        </scene>
+        <!--Bookmarks-->
+        <scene sceneID="GgK-NM-kbC">
+            <objects>
+                <tableViewController id="hbJ-HB-bxb" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4vB-Dh-PDQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eXk-Nt-JFE">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eXk-Nt-JFE" id="jl9-uG-0Tm">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hbJ-HB-bxb" id="7S7-gJ-JiA"/>
+                            <outlet property="delegate" destination="hbJ-HB-bxb" id="dHL-oF-tvD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Bookmarks" id="yYL-Mp-GDk"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAy-ru-7fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1645" y="575"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="knS-jf-1fq">
+            <objects>
+                <tableViewController id="ExZ-IW-XeA" customClass="SearchTableViewController" customModule="Assignment3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XQG-Kk-Rh8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" id="uo2-VC-8Jr">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uo2-VC-8Jr" id="Rgn-h2-obQ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ExZ-IW-XeA" id="smu-5v-eK8"/>
+                            <outlet property="delegate" destination="ExZ-IW-XeA" id="dJ5-Y2-pNr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Search" id="Rhn-Pg-WNF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iv7-5z-wVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1645" y="1231"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r5v-kq-D9h">
