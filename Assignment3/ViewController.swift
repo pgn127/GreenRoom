@@ -9,11 +9,30 @@
 import UIKit
 import MapKit
 
+enum MapType: Int {
+    case Standard = 0
+    case Hybrid
+    case Satellite
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var mainMapView: MKMapView!
     @IBOutlet weak var searchNavButton: UIBarButtonItem!
     @IBOutlet weak var bookmarkNavButton: UIBarButtonItem!
+    @IBOutlet weak var mapTypeSegmentedControl: UISegmentedControl!
+    
+    @IBAction func mapTypeChanged(sender: AnyObject) {
+        let mapType = MapType(rawValue: mapTypeSegmentedControl.selectedSegmentIndex)
+        switch (mapType!) {
+        case .Standard:
+            self.mainMapView.mapType = MKMapType.Standard
+        case .Hybrid:
+            self.mainMapView.mapType = MKMapType.Hybrid
+        case .Satellite:
+            self.mainMapView.mapType = MKMapType.Satellite
+        }
+    }
     
     let forcastService = SurfForcastService()
     var stateList:[StateModel] = []

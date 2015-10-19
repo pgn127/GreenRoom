@@ -29,11 +29,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TJ6-sd-q1G">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="Szu-dT-xGI">
                             <connections>
                                 <segue destination="hbJ-HB-bxb" kind="show" id="of9-Js-1vE"/>
                             </connections>
                         </barButtonItem>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="hK2-oG-vqm">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Map"/>
+                                <segment title="Hybrid"/>
+                                <segment title="Satellite"/>
+                            </segments>
+                            <connections>
+                                <action selector="mapTypeChanged:" destination="H39-3n-8UR" eventType="valueChanged" id="BEF-og-KhH"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="PI3-c6-Isn">
                             <connections>
                                 <segue destination="ExZ-IW-XeA" kind="show" identifier="segueSearch" id="Log-M0-Flw"/>
@@ -43,6 +56,7 @@
                     <connections>
                         <outlet property="bookmarkNavButton" destination="Szu-dT-xGI" id="Hwl-mE-hJq"/>
                         <outlet property="mainMapView" destination="zo8-nG-LAL" id="V89-sN-a0f"/>
+                        <outlet property="mapTypeSegmentedControl" destination="hK2-oG-vqm" id="4Gu-Ny-B47"/>
                         <outlet property="searchNavButton" destination="PI3-c6-Isn" id="FvL-8c-18p"/>
                     </connections>
                 </viewController>
@@ -115,12 +129,46 @@
                     <view key="view" contentMode="scaleToFill" id="ca4-rH-LEE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beach View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXt-77-JC5">
+                                <rect key="frame" x="197" y="86" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yIB-q5-yDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2471" y="817"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bXf-wj-2oY">
+            <objects>
+                <viewController id="Gfw-Ql-tdy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qWe-id-c8O"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hp5-64-vCL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yW0-KI-eSd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Camera view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9k-LG-Ajt">
+                                <rect key="frame" x="168" y="96" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r81-vR-Osf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3127" y="817"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r5v-kq-D9h">
