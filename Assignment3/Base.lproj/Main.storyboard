@@ -91,7 +91,7 @@
             </objects>
             <point key="canvasLocation" x="1645" y="508"/>
         </scene>
-        <!--Search-->
+        <!--Search Table View Controller-->
         <scene sceneID="knS-jf-1fq">
             <objects>
                 <tableViewController id="ExZ-IW-XeA" customClass="SearchTableViewController" customModule="Assignment3" customModuleProvider="target" sceneMemberID="viewController">
@@ -112,7 +112,7 @@
                             <outlet property="delegate" destination="ExZ-IW-XeA" id="dJ5-Y2-pNr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Search" id="Rhn-Pg-WNF"/>
+                    <navigationItem key="navigationItem" id="Rhn-Pg-WNF"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iv7-5z-wVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
