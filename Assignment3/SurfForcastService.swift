@@ -16,18 +16,20 @@ class SurfForcastService {
     let apiStateId:String = "api/v1/states/"
     let apiLocationId:String = "api/v1/locations/"
     
+    
     func getStatesAll(callback: ([StateModel]) -> ()) {
+        //this function retrieves the state information from the url asynchronously  and creates a StateModel with the state info which is appended to the stateList Array.
         let apiEndpoint:String = self.domain + self.apiStates +  ".json" + self.apiKey
         let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: apiEndpoint)!, completionHandler: { (data, response, error) -> Void in
             var error: NSError?
-            var json: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &error)!
+            let json: AnyObject = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
             var stateList:[StateModel] = []
             
             if let jsonParse = json as? [AnyObject] {
                 for item in jsonParse {
-                    var id:Int = item["id"] as! Int
-                    var name:String = item["name"] as! String
-                    var model = StateModel(id: id, name: name)
+                    let id:Int = item["id"] as! Int
+                    let name:String = item["name"] as! String
+                    let model = StateModel(id: id, name: name)
                     stateList.append(model)
                 }
             }
@@ -41,17 +43,17 @@ class SurfForcastService {
         let apiEndpoint:String = self.domain + self.apiStateId + String(id) + ".json" + self.apiKey
         let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: apiEndpoint)!, completionHandler: { (data, response, error) -> Void in
             var error: NSError?
-            var json: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &error)!
+            let json: AnyObject = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
             var locationList:[LocationModel] = []
-            var stateId:Int = json["id"] as! Int
+            let stateId:Int = json["id"] as! Int
             
             if let jsonParse = json["locations"] as? [AnyObject] {
                 for item in jsonParse {
-                    var id:Int = item["id"] as! Int
-                    var name:String = item["name"] as! String
-                    var lat: String = item["latitude"] as! String
-                    var long: String = item["longitude"] as! String
-                    var model = LocationModel(id: id, name: name, stateId: stateId, lat: NSString(string: lat).doubleValue, long: NSString(string: long).doubleValue)
+                    let id:Int = item["id"] as! Int
+                    let name:String = item["name"] as! String
+                    let lat: String = item["latitude"] as! String
+                    let long: String = item["longitude"] as! String
+                    let model = LocationModel(id: id, name: name, stateId: stateId, lat: NSString(string: lat).doubleValue, long: NSString(string: long).doubleValue)
                     locationList.append(model)
                 }
             }
@@ -61,13 +63,99 @@ class SurfForcastService {
         task.resume()
     }
     
+//    func getStateLocationDict() -> [StateModel : LocationModel]{
+//        
+//        let apiEndpoint:String = self.domain + self.apiStates +  ".json" + self.apiKey
+//        let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: apiEndpoint)!, completionHandler: { (data, response, error) -> Void in
+//            if error != nil {
+//                print("Error trying to GET from swellcast \(error)")
+//                return
+//            } else if let d = data, let r = response as? NSHTTPURLResponse{
+//                if(r.statusCode == 200){
+//                    do{
+//                        var stateLocDict = [StateModel : LocationModel]()
+//                        let json: AnyObject = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+//                        if let jsonParse = json as? [AnyObject] {
+//                            for item in jsonParse {
+//                                let id:Int = item["id"] as! Int
+//                                let name:String = item["name"] as! String
+//                                let currentState = StateModel(id: id, name: name)
+//                                
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//
+//            let json: AnyObject = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+//            var stateList:[StateModel] = []
+//            
+//            if let jsonParse = json as? [AnyObject] {
+//                for item in jsonParse {
+//                    let id:Int = item["id"] as! Int
+//                    let name:String = item["name"] as! String
+//                    let model = StateModel(id: id, name: name)
+//                    stateList.append(model)
+//                }
+//            }
+//            
+//            callback(stateList)
+//        })
+//        task.resume()
+//        
+//        
+//        
+//        
+//        
+//        
+//        
+//        
+//        
+//        let apiEndpoint:String = self.domain + self.apiStateId + String(id) + ".json" + self.apiKey
+//        let session = NSURLSession.sharedSession()
+//        let request = NSMutableURLRequest(URL: NSURL(string: apiEndpoint)!)
+//        request.HTTPMethod = "GET"
+//        let task = session.dataTaskWithRequest(request,
+//            completionHandler: {(data, response, error) -> Void in
+//                if error != nil {
+//                    print("Error trying to GET from swellcast \(error)")
+//                } else if let d = data, let r = response as? NSHTTPURLResponse{
+//                    if(r.statusCode == 200){
+//                        do{
+//                            let json: AnyObject = try! NSJSONSerialization.JSONObjectWithData(d, options: NSJSONReadingOptions.AllowFragments)
+//                            if let jsonParse = json["locations"] as? [AnyObject] {
+//                                for item in jsonParse {
+//                                    let id:Int = item["id"] as! Int
+//                                    let name:String = item["name"] as! String
+//                                    let lat: String = item["latitude"] as! String
+//                                    let long: String = item["longitude"] as! String
+//                                    let model = LocationModel(id: id, name: name, stateId: stateId, lat: NSString(string: lat).doubleValue, long: NSString(string: long).doubleValue)
+//                                    locationList.append(model)
+//                                }
+//                            }
+//                            
+//                        } catch {
+//                            print("json error")
+//                        }
+//                    }
+//                }
+//                
+//        })
+//        //print("perform function reached")
+//        task.resume()
+//        
+//    }
+//
+//    
+//    }
+    
     func getLocationById(id: Int) {
         let apiEndpoint:String = self.domain + self.apiLocationId + String(id) + ".json" + self.apiKey
         let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: apiEndpoint)!, completionHandler: { (data, response, error) -> Void in
             var error: NSError?
-            var json: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &error)!
+            let json: AnyObject = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
             
-            println(json)
+            print(json)
             
         })
         task.resume()

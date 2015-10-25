@@ -8,17 +8,25 @@
 
 import Foundation
 
-class StateModel : Printable, DebugPrintable {
+func ==(lhs: StateModel, rhs: StateModel) -> Bool {
+    return lhs.hashValue == rhs.hashValue
+}
+
+class StateModel : NSObject, CustomDebugStringConvertible {
     
-    var id: Int?
-    var name: String?
+    var id: Int
+    var name: String
+    override var hashValue: Int {
+        return self.id
+    }
+//    var locations: [LocationModel]?
     
-    var description: String {
+    override var description: String {
         return "id: " + String(stringInterpolationSegment: self.id) + "\n" +
             "name: " + String(stringInterpolationSegment: self.name)
     }
     
-    var debugDescription: String {
+    override var debugDescription: String {
         return "DEBUG: id: " + String(stringInterpolationSegment: self.id) + "\n" +
             "name: " + String(stringInterpolationSegment: self.name)
     }
@@ -26,6 +34,7 @@ class StateModel : Printable, DebugPrintable {
     init (id: Int, name: String) {
         self.id = id
         self.name = name
+//        self.locations = locations
     }
 
 }

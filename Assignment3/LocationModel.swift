@@ -8,15 +8,16 @@
 
 import Foundation
 
-class LocationModel : Printable, DebugPrintable {
+class LocationModel : NSObject, CustomDebugStringConvertible {
     
     var id: Int
     var name: String
     var stateId: Int
     var lat: Double
     var long: Double
+    
 
-    var description: String {
+    override var description: String {
         return "id: " + String(stringInterpolationSegment: self.id) + "\n" +
             "name: " + String(stringInterpolationSegment: self.name) + "\n" +
             "stateId: " + String(stringInterpolationSegment: self.stateId) + "\n" +
@@ -24,7 +25,7 @@ class LocationModel : Printable, DebugPrintable {
             "long: " + String(stringInterpolationSegment: self.long)
     }
     
-    var debugDescription: String {
+    override var debugDescription: String {
         return "DEBUG: id: " + String(stringInterpolationSegment: self.id) + "\n" +
             "name: " + String(stringInterpolationSegment: self.name) + "\n" +
             "stateId: " + String(stringInterpolationSegment: self.stateId) + "\n" +
