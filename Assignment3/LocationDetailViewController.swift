@@ -9,22 +9,30 @@
 import UIKit
 import Foundation
 
-class LocationDetailViewController: UIViewController {
+class LocationDetailViewController: UITableViewController {
+    
+    //@IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var textviewtest: UITextView!
+    
+    
+    //@IBOutlet weak var textviewtest: UITextView!
     var forcastService = SurfForcastService ()
     var currentLocation: LocationModel?
     var currentDayOfWeek: String?
     var hoursToday : [String] = [] //this will be maintained in order
     var todayForecastByHour = [ String : NSDictionary ]()
     //var todayForecast : [String : [S]]
+    var testItems = [forecastDisplay(swellHeight: "12", windSpeed: "20", time: "9AM", swelldir: "NNW",winddir: "NNE"),forecastDisplay(swellHeight: "12", windSpeed: "20", time: "12PM", swelldir: "NNW",winddir: "NNE"),forecastDisplay(swellHeight: "8", windSpeed: "20", time: "3PM", swelldir: "NNW",winddir: "NNE"),forecastDisplay(swellHeight: "12", windSpeed: "20", time: "6PM", swelldir: "NNW",winddir: "NNE"),forecastDisplay(swellHeight: "12", windSpeed: "20", time: "9PM", swelldir: "NNW",winddir: "NNE"),forecastDisplay(swellHeight: "12", windSpeed: "20", time: "11PM", swelldir: "NNW",winddir: "NNE"),forecastDisplay(swellHeight: "12", windSpeed: "20", time: "1AM", swelldir: "NNW",winddir: "NNE"),forecastDisplay(swellHeight: "12", windSpeed: "20", time: "4AM", swelldir: "NNW",winddir: "NNE"),forecastDisplay(swellHeight: "12", windSpeed: "20", time: "7AM", swelldir: "NNW",winddir: "NNE")]
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.hidden = true
+        tableView.rowHeight = UITableViewAutomaticDimension
         if let loc = currentLocation{
             getLocationDetails(loc.id)
+            self.navigationItem.title = loc.name
         }
         
         
@@ -35,6 +43,49 @@ class LocationDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        sizeHeaderToFit()
+//    }
+//    
+//    func sizeHeaderToFit() {
+//        let headerView = tableView.tableHeaderView!
+//        
+//        headerView.setNeedsLayout()
+//        headerView.layoutIfNeeded()
+//        
+//        let height = headerView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
+//        var frame = headerView.frame
+//        frame.size.height = height
+//        headerView.frame = frame
+//        
+//        tableView.tableHeaderView = headerView
+//    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.testItems.count
+    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+        
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let item = testItems[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("fCell", forIndexPath: indexPath) as! LocCell
+        cell.cellInfo = item
+        return cell
     }
     
 

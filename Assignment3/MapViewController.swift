@@ -20,7 +20,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var loadComplete = false
     var stateList:[StateModel] = []
     var locationList: [LocationModel] = []
+    var locationSelected: LocationModel?
     var stateLocDict = [StateModel : [LocationModel]]()
+    
+    
+    class CustomPointAnnotation: MKPointAnnotation {
+        var locationInfo: LocationModel?
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +64,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                         //print("\(self.stateLocDict.count)")
                         for location in locationResponse {
                             //self.stateLocDict![state] = location
-                            self.addPinToMap(location.lat, long: location.long, title: location.name)
+                            self.addPinToMap(location.lat, long: location.long, title: location.name, locinf: location)
                         }
                         if self.stateLocDict.count == 5 {
                             self.transferInfo()
@@ -90,11 +96,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
     }
 
-    func addPinToMap(lat:Double, long:Double, title:String, subTitle:String?=nil) {
-        let annotation = MKPointAnnotation()
+    func addPinToMap(lat:Double, long:Double, title:String, subTitle:String?=nil, locinf: LocationModel) {
+//        let annotation = MKPointAnnotation()
+        let annotation = CustomPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
         annotation.title = title
         annotation.subtitle = subTitle
+        annotation.locationInfo = locinf
         //var anView = MKAnnotationView(annotation: annotation, reuseIdentifier: "loc")
         
         self.mainMapView.addAnnotation(annotation)
@@ -121,7 +129,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func mapView(MapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
     
         if control == annotationView.rightCalloutAccessoryView {
-            performSegueWithIdentifier("selectedAnnotation", sender: self)
+            if let ano = annotationView.annotation as? CustomPointAnnotation{
+                self.locationSelected = ano.locationInfo
+                performSegueWithIdentifier("selectedAnnotation", sender: self)
+            }
+            
             
         }
     }
@@ -131,9 +143,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let tableVC = segue.destinationViewController as! SearchTableViewController
             tableVC.locations = NSMutableArray(array: self.locationList)
         } else if (segue.identifier == "selectedAnnotation"){
-            
-            //set LocationDetailViewController.currentLocation = selected annotation location
-            
+            let locVC = segue.destinationViewController as! LocationDetailViewController
+            locVC.currentLocation = self.locationSelected
         }
     }
 }

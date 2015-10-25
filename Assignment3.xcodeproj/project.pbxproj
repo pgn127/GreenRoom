@@ -20,6 +20,9 @@
 		3E7DB1231BD38D85001788DF /* SurfForcastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DB1221BD38D85001788DF /* SurfForcastService.swift */; };
 		6D421F221BD91FE4004176DC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D421F211BD91FE4004176DC /* ListViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		6D421F261BD9E8D7004176DC /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D421F251BD9E8D7004176DC /* FavoritesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		6D5B5A971BDCC80900629C85 /* LocationTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B5A961BDCC80900629C85 /* LocationTableHeaderView.swift */; settings = {ASSET_TAGS = (); }; };
+		6D5B5A991BDCD50900629C85 /* LocCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B5A981BDCD50900629C85 /* LocCell.swift */; settings = {ASSET_TAGS = (); }; };
+		6D5B5A9B1BDCD5E300629C85 /* forecastDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B5A9A1BDCD5E300629C85 /* forecastDisplay.swift */; settings = {ASSET_TAGS = (); }; };
 		6DB919AD1BDA1B220024320A /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB919AC1BDA1B220024320A /* LocationDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -51,6 +54,9 @@
 		3E7DB1221BD38D85001788DF /* SurfForcastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurfForcastService.swift; sourceTree = "<group>"; };
 		6D421F211BD91FE4004176DC /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		6D421F251BD9E8D7004176DC /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		6D5B5A961BDCC80900629C85 /* LocationTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableHeaderView.swift; sourceTree = "<group>"; };
+		6D5B5A981BDCD50900629C85 /* LocCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocCell.swift; sourceTree = "<group>"; };
+		6D5B5A9A1BDCD5E300629C85 /* forecastDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forecastDisplay.swift; sourceTree = "<group>"; };
 		6DB919AC1BDA1B220024320A /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,7 +107,10 @@
 				3E341E701BD4E43600F83A65 /* StateModel.swift */,
 				3E341E741BD5158900F83A65 /* SearchTableViewController.swift */,
 				3E0E7A541BCDEE8E00A4E09C /* Main.storyboard */,
+				6D5B5A961BDCC80900629C85 /* LocationTableHeaderView.swift */,
 				6DB919AC1BDA1B220024320A /* LocationDetailViewController.swift */,
+				6D5B5A981BDCD50900629C85 /* LocCell.swift */,
+				6D5B5A9A1BDCD5E300629C85 /* forecastDisplay.swift */,
 				6D421F251BD9E8D7004176DC /* FavoritesTableViewController.swift */,
 				3E0E7A571BCDEE8E00A4E09C /* Images.xcassets */,
 				3E0E7A591BCDEE8E00A4E09C /* LaunchScreen.xib */,
@@ -240,6 +249,7 @@
 			files = (
 				3E0E7A531BCDEE8E00A4E09C /* MapViewController.swift in Sources */,
 				3E0E7A511BCDEE8E00A4E09C /* Assignment3.xcdatamodeld in Sources */,
+				6D5B5A9B1BDCD5E300629C85 /* forecastDisplay.swift in Sources */,
 				3E7DB1231BD38D85001788DF /* SurfForcastService.swift in Sources */,
 				6D421F261BD9E8D7004176DC /* FavoritesTableViewController.swift in Sources */,
 				6DB919AD1BDA1B220024320A /* LocationDetailViewController.swift in Sources */,
@@ -247,6 +257,8 @@
 				3E341E751BD5158900F83A65 /* SearchTableViewController.swift in Sources */,
 				3E0E7A4E1BCDEE8E00A4E09C /* AppDelegate.swift in Sources */,
 				3E341E731BD4E5C200F83A65 /* LocationModel.swift in Sources */,
+				6D5B5A971BDCC80900629C85 /* LocationTableHeaderView.swift in Sources */,
+				6D5B5A991BDCD50900629C85 /* LocCell.swift in Sources */,
 				3E341E711BD4E43600F83A65 /* StateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
