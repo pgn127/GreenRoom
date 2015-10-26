@@ -9,6 +9,9 @@
 import UIKit
 
 class LocationTableHeaderView: UITableViewHeaderFooterView {
+    
+    
+   
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -17,6 +20,7 @@ class LocationTableHeaderView: UITableViewHeaderFooterView {
         // Drawing code
     }
     */
+    
     
     override func layoutSubviews() {
         super.layoutSubviews()

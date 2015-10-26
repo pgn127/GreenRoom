@@ -9,11 +9,13 @@
 import UIKit
 import Foundation
 
-class LocationDetailViewController: UITableViewController {
+class LocationDetailViewController: UITableViewController{
     
     //@IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var textviewtest: UITextView!
+    private let kTableHeaderHeight: CGFloat = 300.0
+    var headerView: UIView!
     
     
     //@IBOutlet weak var textviewtest: UITextView!
@@ -29,7 +31,15 @@ class LocationDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.hidden = true
-        tableView.rowHeight = UITableViewAutomaticDimension
+        headerView = tableView.tableHeaderView
+        tableView.tableHeaderView = nil
+        tableView.addSubview(headerView)
+        tableView.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right:0)
+        tableView.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
+        updateHeaderView()
+        //var tempImageView = UIImage(named: "ocean")
+        tableView.backgroundView = UIImageView(image: UIImage(named: "ocean"))
+        //tableView.rowHeight = UITableViewAutomaticDimension
         if let loc = currentLocation{
             getLocationDetails(loc.id)
             self.navigationItem.title = loc.name
@@ -43,6 +53,19 @@ class LocationDetailViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updateHeaderView(){
+        var headerRect = CGRect(x: 0, y: -kTableHeaderHeight, width: tableView.bounds.width, height: kTableHeaderHeight)
+        if tableView.contentOffset.y < -kTableHeaderHeight {
+            headerRect.origin.y = tableView.contentOffset.y
+            headerRect.size.height = -tableView.contentOffset.y
+        }
+        headerView.frame = headerRect
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        updateHeaderView()
     }
     
 //    override func viewDidLayoutSubviews() {
