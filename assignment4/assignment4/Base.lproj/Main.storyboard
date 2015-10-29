@@ -61,7 +61,7 @@
             </objects>
             <point key="canvasLocation" x="-647" y="-294"/>
         </scene>
-        <!--Item-->
+        <!--Table View Controller-->
         <scene sceneID="bUF-2z-5Bi">
             <objects>
                 <tableViewController id="TIa-oq-BiF" sceneMemberID="viewController">
@@ -84,7 +84,7 @@
                             <outlet property="delegate" destination="TIa-oq-BiF" id="6Vo-Ws-zVb"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="6KR-fc-3Fa"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="6KR-fc-3Fa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Uo-VQ-xvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
