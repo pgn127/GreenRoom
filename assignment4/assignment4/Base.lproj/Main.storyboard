@@ -208,6 +208,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Day" id="uMl-RX-Dfc">
+                        <barButtonItem key="leftBarButtonItem" title="Comment" id="7Ti-Ag-89d">
+                            <connections>
+                                <segue destination="BSj-BY-EPe" kind="show" id="eGi-SN-2c3"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Favorite" id="ou0-cP-y7I">
                             <connections>
                                 <action selector="FavoriteButtonPressed:" destination="BYZ-38-t0r" id="6hH-HC-j3R"/>
@@ -222,6 +227,83 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1657" y="-944"/>
+        </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="tEF-Wr-qWM">
+            <objects>
+                <viewController id="BSj-BY-EPe" customClass="CommentViewController" customModule="assignment4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="THv-Dk-FRZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="iE2-Zg-w5k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JgR-hd-YHQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHq-0t-gof">
+                                <rect key="frame" x="20" y="91" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fff-sI-Sba">
+                                <rect key="frame" x="20" y="120" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBj-rO-agP">
+                                <rect key="frame" x="20" y="158" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comments on the surf" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="im8-nH-kmn">
+                                <rect key="frame" x="20" y="187" width="560" height="200"/>
+                                <color key="backgroundColor" red="0.95146780303030298" green="0.95146780303030298" blue="0.95146780303030298" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="7nm-rI-tE3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYk-n6-ABx">
+                                <rect key="frame" x="20" y="395" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.51372549020000002" green="0.68627450980000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.951467803" green="0.951467803" blue="0.951467803" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="postCommentData:" destination="BSj-BY-EPe" eventType="touchUpInside" id="byc-uD-qR2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="UYk-n6-ABx" secondAttribute="trailing" id="3Q6-U2-ZDU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fff-sI-Sba" secondAttribute="trailing" id="83U-q3-ZPG"/>
+                            <constraint firstItem="im8-nH-kmn" firstAttribute="leading" secondItem="JgR-hd-YHQ" secondAttribute="leadingMargin" id="ERg-oj-j99"/>
+                            <constraint firstItem="mBj-rO-agP" firstAttribute="top" secondItem="Fff-sI-Sba" secondAttribute="bottom" constant="8" id="Hly-uS-yDN"/>
+                            <constraint firstItem="mBj-rO-agP" firstAttribute="leading" secondItem="JgR-hd-YHQ" secondAttribute="leadingMargin" id="QHa-MG-Blj"/>
+                            <constraint firstItem="yHq-0t-gof" firstAttribute="leading" secondItem="JgR-hd-YHQ" secondAttribute="leadingMargin" id="T9X-L8-pl6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="im8-nH-kmn" secondAttribute="trailing" id="aK7-3Q-17C"/>
+                            <constraint firstItem="im8-nH-kmn" firstAttribute="top" secondItem="mBj-rO-agP" secondAttribute="bottom" constant="8" id="bZu-Wu-TeD"/>
+                            <constraint firstItem="UYk-n6-ABx" firstAttribute="leading" secondItem="JgR-hd-YHQ" secondAttribute="leadingMargin" id="cJF-SJ-snf"/>
+                            <constraint firstItem="Fff-sI-Sba" firstAttribute="leading" secondItem="JgR-hd-YHQ" secondAttribute="leadingMargin" id="fPu-ku-niA"/>
+                            <constraint firstItem="yHq-0t-gof" firstAttribute="top" secondItem="THv-Dk-FRZ" secondAttribute="bottom" constant="27" id="fcH-pl-9PI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yHq-0t-gof" secondAttribute="trailing" id="jnV-fL-a0d"/>
+                            <constraint firstItem="UYk-n6-ABx" firstAttribute="top" secondItem="im8-nH-kmn" secondAttribute="bottom" constant="8" id="qg9-ea-9v9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mBj-rO-agP" secondAttribute="trailing" id="ta1-20-fzq"/>
+                            <constraint firstItem="Fff-sI-Sba" firstAttribute="top" secondItem="yHq-0t-gof" secondAttribute="bottom" constant="8" id="yUU-uR-1jc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bodyTextBox" destination="im8-nH-kmn" id="2kW-Om-vws"/>
+                        <outlet property="subjectTextBox" destination="Fff-sI-Sba" id="5P7-sE-hXA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0FT-f1-wuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2351" y="-1683"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="bkX-jw-hc6">
@@ -475,6 +557,6 @@
         <image name="arrow" width="1124" height="1124"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="89x-Os-NYe"/>
+        <segue reference="frx-xk-VzD"/>
     </inferredMetricsTieBreakers>
 </document>
