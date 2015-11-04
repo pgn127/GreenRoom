@@ -25,6 +25,14 @@ http://swellcast.com.au/surf-forecast-api
 * /api/v1/states/:state_id.json?api_key=your_api_key
 * /api/v1/locations/:location_id.json?api_key=your_api_key
 
+## Server (Personal API)
+This server was built to support a POST request as requested in the spec.
+It is built on node.js > express.js and hosted on my personal server.
+
+http://greenroom.danieldelcore.com
+* /
+* /api/PostStatusUpdate
+
 ## Class Desc
 
 ### SurfForcastService.swift
@@ -60,6 +68,12 @@ Source: Group
 ### ContentViewController.swift
 
 Description: ContentViewController is the most visually detailed classes of the application. It is responsible for displaying data relevant to a specific time step "BeachModel/Forcast". It is contained by the BeachViewController. Users can easily swipe from one ContentViewController instance to another.
+
+Source: Group
+
+### CustomTableViewCell.swift
+
+Description: The comment view controller has a form that submits to the custom build api at "http://greenroom.danieldelcore.com". This is for the POST portion of this assignment
 
 Source: Group
 
