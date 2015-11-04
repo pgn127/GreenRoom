@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Green Room API</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>GreenRoom API</h1>
+        <p>Welcome to the Green Room api.</p>
+        <button type="button" onclick="sendData()">Test Endpoint</button>
+
+        <script type="text/javascript">
+            function sendData() {
+                $.ajax({
+                    method: 'POST',
+                    url: 'http://greenroom.danieldelcore.com/api/PostStatusUpdate',
+                    data: {
+                        id: 1,
+                        text: 'This is dummy text'
+                    }
+                })
+                .done(function(res) {
+                    console.log(res);
+                    alert( 'success' );
+                })
+                .fail(function(err) {
+                    console.log(err);
+                    alert( 'error');
+                })
+                .always(function() {
+                    console.log('complete');
+                });
+            }
+        </script>
+    </body>
+</html>
