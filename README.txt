@@ -25,6 +25,14 @@ http://swellcast.com.au/surf-forecast-api
 * /api/v1/states/:state_id.json?api_key=your_api_key
 * /api/v1/locations/:location_id.json?api_key=your_api_key
 
+## Server (Personal API)
+This server was built to support a POST request as requested in the spec.
+It is built on node.js > express.js and hosted on my personal server.
+
+http://greenroom.danieldelcore.com
+* /
+* /api/PostStatusUpdate
+
 ## Class Desc
 
 ### SurfForcastService.swift
