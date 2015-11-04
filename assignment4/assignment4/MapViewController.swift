@@ -27,17 +27,37 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
         mainMapView.delegate = self
         
-        self.initMapView()
-        self.initModels()
+        self.initViewController()
     }
 
     override func viewWillAppear(animated: Bool){
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+    func initViewController() {
+        if Reachability.isConnectedToNetwork() == true {
+            // Internet connection OK
+            
+            self.initMapView()
+            self.initModels()
+            
+        } else {
+            print("Internet connection FAILED")
+            //alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+            let alertController = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: .Alert)
+            let resetAction = UIAlertAction(title: "Retry", style: .Default) { (action) in
+                self.initViewController()
+            }
+            alertController.addAction(resetAction)
+            
+            self.presentViewController(alertController, animated: true, completion:nil)
+        }
+    }
+    
     // MARK: Main setup
     func initModels() {
         self.forcastService.getStatesAll({ (response) in

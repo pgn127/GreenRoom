@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E89118D1BE9B7D600EADDEB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E89118C1BE9B7D600EADDEB /* Reachability.swift */; };
+		3E89118F1BE9BE4D00EADDEB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E89118E1BE9BE4D00EADDEB /* CustomTableViewCell.swift */; };
 		3EDA64171BE0C517003B4F3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDA64161BE0C517003B4F3B /* AppDelegate.swift */; };
 		3EDA64191BE0C517003B4F3B /* BeachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDA64181BE0C517003B4F3B /* BeachViewController.swift */; };
 		3EDA641C1BE0C517003B4F3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDA641A1BE0C517003B4F3B /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E89118C1BE9B7D600EADDEB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		3E89118E1BE9BE4D00EADDEB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3EDA64131BE0C517003B4F3B /* assignment4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assignment4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDA64161BE0C517003B4F3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EDA64181BE0C517003B4F3B /* BeachViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				3EDA64221BE0C517003B4F3B /* LaunchScreen.storyboard */,
 				3EDA64251BE0C517003B4F3B /* Info.plist */,
 				3EDA641D1BE0C517003B4F3B /* assignment4.xcdatamodeld */,
+				3E89118C1BE9B7D600EADDEB /* Reachability.swift */,
+				3E89118E1BE9BE4D00EADDEB /* CustomTableViewCell.swift */,
 			);
 			path = assignment4;
 			sourceTree = "<group>";
@@ -177,11 +183,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E89118D1BE9B7D600EADDEB /* Reachability.swift in Sources */,
 				3EDA642C1BE0C722003B4F3B /* ContentViewController.swift in Sources */,
 				3EDA64311BE0D714003B4F3B /* StateModel.swift in Sources */,
 				3EDA64191BE0C517003B4F3B /* BeachViewController.swift in Sources */,
 				3EDA643A1BE22C9E003B4F3B /* FavoritesTableViewController.swift in Sources */,
 				3EDA64321BE0D714003B4F3B /* SurfForcastService.swift in Sources */,
+				3E89118F1BE9BE4D00EADDEB /* CustomTableViewCell.swift in Sources */,
 				3EDA643C1BE22D71003B4F3B /* ListViewController.swift in Sources */,
 				3EDA643E1BE2307E003B4F3B /* FavoriteEntityManager.swift in Sources */,
 				3EDA64361BE0EF42003B4F3B /* MapViewController.swift in Sources */,
