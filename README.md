@@ -2,15 +2,9 @@
 The Green Room mobile app provides long range surf forecasts for Australia’s major beaches. Our application fetches forecast data from The Australian Surf Forecast API and displays swell size, swell direction, wind speed, wind direction in 3 hour increments. Users are able to view and bookmark beaches closest to them and seamlessly navigate to their details. Green Room is the most convenient way to find what the surf is doing at locations around you. Making it easier than ever to decide where to surf. Completely Free.
 
 ## Team members
-Daniel Del Core - Group leader
-
-    Email: dd888@uowmail.edu.au
-    Student Number: 4071499
-
+Daniel Del Core
 Pam Needle
 
-    Email: pgn342@uowmail.edu.au
-    Student Number: 5175628
 
 
 ## Get running
@@ -27,7 +21,7 @@ http://swellcast.com.au/surf-forecast-api
 
 ## Server (Personal API)
 This server was built to support a POST request as requested in the spec.
-It is built on node.js > express.js and hosted on my personal server.
+It is built on node.js > express.js and hosted on Daniel's personal server.
 
 http://greenroom.danieldelcore.com
 * /
